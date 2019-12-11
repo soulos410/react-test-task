@@ -1,0 +1,6 @@
+.add-user__form {
+    display: flex;
+    width: 700px;
+    margin: 0 auto;
+    justify-content: space-around;
+}

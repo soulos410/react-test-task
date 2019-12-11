@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import {
-    users
+    users, usersAreLoading
 } from './users';
 
 export const rootReducer = combineReducers({
-    users
+    users, usersAreLoading
 });

@@ -1,0 +1,11 @@
+.users__list {
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.users-list__single-cell {
+    border: 1px solid #000;
+    text-align: center;
+}
