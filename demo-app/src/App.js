@@ -11,29 +11,17 @@ import { usersFetchData } from './actions/index';
 import UsersList from './components/UsersList/UsersList';
 import AddUserForm from './components/AddUserForm/AddUserForm';
 
-const mapStateToProps = state => ({
-  users: state.users,
-});
-
 const mapDispatchToProps = dispatch => ({
   fetchData: () => dispatch(usersFetchData()),
 });
 
 class App extends Component {
-  state = {
-
-  }
-
-  updateHandler = update => {
-    this.setState({ shouldUpdate: update });
-  }
-
   componentDidMount() {
     this.props.fetchData();
-    this.updateHandler(false);
   }
 
   render() {
+    console.log(this.props.store);
     return (
       <Router>
         <ul className='app__users-list'>
@@ -60,4 +48,4 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
