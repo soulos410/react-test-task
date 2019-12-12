@@ -20,8 +20,17 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class App extends Component {
+  state = {
+
+  }
+
+  updateHandler = update => {
+    this.setState({ shouldUpdate: update });
+  }
+
   componentDidMount() {
     this.props.fetchData();
+    this.updateHandler(false);
   }
 
   render() {

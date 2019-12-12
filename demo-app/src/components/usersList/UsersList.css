@@ -1,5 +1,5 @@
 .users__list {
-    width: 600px;
+    width: 800px;
     margin: 0 auto;
     border: 1px solid #000;
     border-collapse: collapse;
@@ -8,4 +8,18 @@
 .users-list__single-cell {
     border: 1px solid #000;
     text-align: center;
+}
+
+.users-list__single-cell button {
+    width: 100%;
+    height: 100%;
+    height: 25px;
+    border: none;
+}
+
+.users-list__add-user_btn {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    background: #dcdcdc;
 }
