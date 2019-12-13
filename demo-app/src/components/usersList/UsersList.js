@@ -13,12 +13,17 @@ const mapDispatchToProps = dispatch => ({
 })
 
 class UsersList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      ...this.props.users
+    }
+  }
   deleteHandler = (event) => {
     this.props.deleteUser(event.target.name);
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <table className='users__list'>
@@ -42,7 +47,7 @@ class UsersList extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.users && this.props.users.map((el, index) => (
+            {this.props.users.map((el, index) => (
               <tr key={index} className='users__single-item' name='single-user'>
                 <td className='users-list__single-cell' name='name'>{el.name}</td>
                 <td className='users-list__single-cell' name='surname'>{el.surname}</td>

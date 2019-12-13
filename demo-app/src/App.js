@@ -21,7 +21,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.store);
     return (
       <Router>
         <ul className='app__users-list'>

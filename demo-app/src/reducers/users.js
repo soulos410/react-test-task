@@ -1,23 +1,24 @@
-export function userReducer(state = {}, action) {
+export function usersAreLoading(state = false, action) {
   switch (action.type) {
     case 'USERS_ARE_LOADING':
-      return {
-        ...state,
-        isLoading: action.isLoading
-      }
+      return action.isLoading;
+    default:
+      return state;
+  }
+}
+
+export function users(state = [], action) {
+  switch (action.type) {
     case 'USERS_SUCCESSFULLY_LOADED':
-      return {
-        ...state,
-        users: action.users
-      }
+      return action.users;
+    default:
+      return state;
+  }
+}
+
+export function addUser(state = {}, action) {
+  switch (action.type) {
     case 'ADD_NEW_USER_SUCCESS':
-      console.log('reducer addUsers', {
-        ...state,
-        users: [
-          ...state.users,
-          action.user
-        ]
-      });
       return {
         ...state,
         users: [
@@ -25,6 +26,13 @@ export function userReducer(state = {}, action) {
           action.user
         ]
       }
+    default:
+      return state;
+  }
+}
+
+export function deleteUser(state = [], action) {
+  switch (action.type) {
     case 'DELETE_USER_SUCCESS':
       return state.users.filter(el => {
         return el.name !== action.name
